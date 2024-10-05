@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "start": "npx tsc && node ./dist/runner.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "@grammyjs/conversations": "^1.2.0",
+    "grammy": "^1.30.0"
+  }
+}
