@@ -1,10 +1,12 @@
-// import { createConversation } from "@grammyjs/conversations";
-// import { MyConversation, MyContext } from "../runner";
+import { createConversation } from "@grammyjs/conversations";
+import { MyConversation, MyContext } from "../runner";
+import settings from "./../../static/settings.json";
+import { MessageUtil } from "../utils/message";
 
-// async function selectLanguage(conversation: MyConversation, ctx: MyContext) {
-//     await ctx.reply("Hi there! What is your name?");
-//     const { message } = await conversation.wait();
-//     await ctx.reply(`Welcome to the chat, ${message == undefined ? "UNDEFINED" : message.text}!`);
-// }
+async function selectLanguage(conversation: MyConversation, ctx: MyContext) {
+    await ctx.reply(MessageUtil.format(settings.selectLanguage));
+    const { message } = await conversation.wait();
+    await ctx.reply(`Welcome to the chat, ${message == undefined ? "UNDEFINED" : message.text}!`);
+}
 
-// bot.use(createConversation(selectLanguage));
+export default selectLanguage;

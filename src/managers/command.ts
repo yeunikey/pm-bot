@@ -6,11 +6,13 @@ import bot, { MyContext } from "../runner";
 export class CommandManager extends Manager {
     
     onStart(): void {
-        Logger.log("Hello world")
+        this.register("start", async (ctx) => {
+            await ctx.conversation.enter("selectLanguage");
+        })
     }
 
     register(command: string, ctx: CommandMiddleware<MyContext>) {
-        bot.getBot().command(command, ctx);
+        this.getInstance().getBot().command(command, ctx);
     }
 
 }
