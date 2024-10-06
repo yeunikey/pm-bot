@@ -1,9 +1,17 @@
-import { User } from "../user/user";
+import { User } from "../entities/user";
 import { Manager } from "./manager";
 
 export class UserManager extends Manager {
     
     private users: Map<number, User> = new Map();
+
+    public getUsers() {
+        return this.users;
+    }
+
+    public getUser(id: number) {
+        return this.users.get(id);
+    }
 
     public addUser(user: User) {
         this.users.set(user.id, user);

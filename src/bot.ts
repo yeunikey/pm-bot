@@ -5,6 +5,9 @@ import { CommandManager } from "./managers/command";
 import { conversations } from "@grammyjs/conversations";
 import { UserManager } from "./managers/user";
 import { ConservationManager } from "./managers/conservation";
+import LanguageManager from "./managers/language";
+import { Logger } from "./utils/logger";
+import ScenarioManager from "./managers/scenario";
 
 export class MyBot {
     private apiKey: string;
@@ -13,6 +16,8 @@ export class MyBot {
     private userManager = new UserManager(this);
     private conservationManager = new ConservationManager(this);
     private commandManager = new CommandManager(this);
+    private languageManager = new LanguageManager(this);
+    private scenarioManager = new ScenarioManager(this);
 
     constructor(apiKey: string) {
         this.apiKey = apiKey;
@@ -24,12 +29,15 @@ export class MyBot {
         this.managers();
 
         this.bot.start();
+        Logger.log("Бот запущен!")
     }
 
     private managers() {
         this.userManager.onStart();
         this.conservationManager.onStart();
         this.commandManager.onStart();
+        this.languageManager.onStart();
+        this.scenarioManager.onStart();
     }
 
     private plugins() {
@@ -47,6 +55,14 @@ export class MyBot {
 
     public getConservationManager() {
         return this.conservationManager;
+    }
+
+    public getLanguageManager() {
+        return this.languageManager;
+    }
+
+    public getScenarioManager() {
+        return this.scenarioManager;
     }
 
     public getBot() {

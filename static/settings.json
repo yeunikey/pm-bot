@@ -1,12 +1,28 @@
 {
-    "languages": {
-        "ru_RU": "Русский"
-    },
+    "languages": [
+        {
+            "key": "ru_RU",
+            "name": "\uD83C\uDDF7\uD83C\uDDFA Русский"
+        },
+        {
+            "key": "kz_KZ",
+            "name": "\uD83C\uDDF0\uD83C\uDDFF Қазақша"
+        },
+        {
+            "key": "en_EN",
+            "name": "\uD83C\uDDEC\uD83C\uDDE7 English"
+        }
+    ],
 
     "selectLanguage": [
         "Вас приветствует автоматизированная",
         "система поддержки Astana IT University",
         "",
         "Выберите удобный для себя язык:"
+    ],
+
+    "categories": [
+        "Университет",
+        "Приёмная комиссия"
     ]
 }

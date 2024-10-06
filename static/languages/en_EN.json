@@ -1,0 +1,11 @@
+{
+    "selectedLanguage": "Selected Language - %language%",
+    "selectMenu": "Select one of the offers",
+   
+    "menu": {
+        "faq": "FAQ",
+        "ticket": "Ticket",
+        "ai": "AI Assistant",
+        "beseda": "Conversation of applicants"
+    }
+}
